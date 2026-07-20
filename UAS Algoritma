@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int data[15] = {23, 5, 67, 12, 89, 34, 1, 45, 9, 56, 90, 3, 40, 21, 15};
+    int n = 15;
+
+    printf("Data sebelum diurutkan:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", data[i]);
+    }
+    printf("\n\n");
+
+    printf("Proses pengurutan:\n");
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (data[j] > data[j + 1]) {
+                int simpan = data[j];
+                data[j] = data[j + 1];
+                data[j + 1] = simpan;
+            }
+
+            for (int k = 0; k < n; k++) {
+                printf("%d ", data[k]);
+            }
+            printf("\n");
+        }
+    }
+
+    printf("\nData setelah diurutkan:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", data[i]);
+    }
+    printf("\n");
+    return 0;
+}
